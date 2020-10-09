@@ -1,0 +1,43 @@
+{% extends 'myinfo/base.html' %}
+{% load static %}
+
+{% block about_me %}
+    <br>
+    <div class="card teal lighten-3">
+    <div class="profile-image">
+        <img src="{% static 'myinfo/images/EASY_in_paint.png' %}" alt="My Photo">
+    </div>
+
+    <div class="row">
+        <div class="col s6 profile-content">
+            <ul>
+                <li><div class="row">
+                    <div class="col s6 right-align">Name |</div>
+                    <div class="col s6 left-align">Alexandr Kokshin</div>
+                    </div></li>
+                <li><div class="row">
+                    <div class="col s6 right-align">Birthday |</div>
+                    <div class="col s6 left-align">May 26, 1994</div>
+                    </div></li>
+                <li><div class="row">
+                    <div class="col s6 right-align">Location |</div>
+                    <div class="col s6 left-align">Russia, Samara</div>
+                    </div></li>
+            </ul>
+        </div>
+
+        <div class="col s6">
+            <div class="container">
+            <div>About me:</div>
+                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, asperiores aspernatur consequatur dolore eligendi enim excepturi facere illum impedit perspiciatis provident quam quibusdam rem repellendus unde vel velit veritatis vitae!</div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
+
+{% block my_jobs %}
+{% endblock %}
+
+

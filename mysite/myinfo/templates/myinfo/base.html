@@ -1,12 +1,50 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>MAIN PAGE</title>
+    <link rel="stylesheet" href="{% static 'myinfo/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
+    <nav>
+        <div class="container ">
+      Alexandr Kokshin
+        </div>
+    </nav>
 
+   <div class="row">
+       <!-- <div class="col s2">
+           <div class="collection" >
+                   <a href="{ % url 'myinfo:about_me' %}" class="collection-item center-align">About me</a>
+                   <a href="{ % url 'myinfo:my_jobs' %}" class="collection-item center-align">My jobs</a>
+                   <a href="{ % url 'myinfo:contacts' %}" class="collection-item center-align">Contacts</a>
+           </div>
+       </div> -->
+       <div class="col s12">
+            <article class="container center-align">
+
+        {% block about_me %}
+         <!-- PUT YOUR CONTENT IN ANOTHER FILE -->
+        {% endblock %}
+        {% block my_jobs %}
+         <!-- PUT YOUR CONTENT IN ANOTHER FILE -->
+        {% endblock %}
+        {% block contacts %}
+         <!-- PUT YOUR CONTENT IN ANOTHER FILE -->
+        {% endblock %}
+            </article>
+       </div>
+   </div>
+
+<footer class="page-footer">
+    Contact me:
+    <br/>phone<br/>mail
+</footer>
 
 </body>
 </html>
