@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row mt-4">
+        <div class="col">
+            <h2>Add Note</h2>
+            <form action="add_todo/" method="post" class="card-title form-inline">{% csrf_token %}
+                <div class="card" style="width: 20rem;">
+                    <div class="card-title mt-2 ml-2">
+                        <input type="text" name="title" class="form-control mb-2 mr-sm-2" placeholder="Title">
+                    </div>
+                    <div class="card-text ml-2">
+                        <input type="text" name="content" class="form-control mb-2 mr-sm-2" placeholder="Put your text here">
+                    </div>
+                    <div class="card-link text-right mr-3 mt-4 form-inline">
+                        <div class="card-text ml-2">
+                            <input type="text" name="category" class="form-control mb-2 mr-sm-2" placeholder="Category(can be empty)">
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+ <hr>
+ <h2>Your notes</h2>
+    <div class="row mt-4">
+        <div class="col">
+
+            {% for todo_item in todo_items %}
+                <div class="card mr-4 mt-4" style="width: 20rem;">
+                    <div class="card-header font-weight-bold">{{ todo_item.title }}</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"> {{ todo_item.text }}
+                        <div class="text-right">
+                            <form action="delete_todo/{{ todo_item.id }}/" action="post">{% csrf_token %}
+                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                            </form>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% for i in category_list %}
+        <div class="card mr-4 mt-4">
+            <h2 class="card-header font-weight-bold">{{ i }}</h2>
+            <div class="card mr-4 mt-4" style="width: 20rem;">
+
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}

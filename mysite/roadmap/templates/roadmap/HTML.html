@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Timeline Layout</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  
+  <link rel="stylesheet" href="{% static 'roadmap/css/style.css' %}">
+
+</head>
+
+<body>
+  <section id=timeline>
+	<h1>A Flexbox Timeline</h1>
+	<p class="leader">All cards must be the same height and width for space calculations on large screens.</p>
+
+	<div class="demo-card-wrapper">
+
+        <!-- CARD -->
+		<div class="demo-card demo-card--step1">
+			<div class="head">
+				<div class="number-box">
+					<span>01</span>
+				</div>
+				<h2><span class="small">Subtitle</span> Technology</h2>
+			</div>
+			<div class="body">
+                <iframe width="400" height="225" src="https://www.youtube.com/embed/5zkOWf5_lAo"></iframe>
+			</div>
+		</div>
+
+    
+	</div>
+</section>
+  
+  
+</body>
+</html>
